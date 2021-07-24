@@ -8,28 +8,30 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var numeros: TextView
+    private lateinit var info: TextView
+    private lateinit var desc: TextView
     private lateinit var botao: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        this.numeros = findViewById(R.id.tvNumeros)
+        this.info = findViewById(R.id.tvInfo)
+        this.desc = findViewById(R.id.tvDescricao)
         this.botao = findViewById(R.id.button)
-
-        this.numeros.text = Megasena().toString()
 
         this.botao.setOnClickListener(TrataClickBotao())
     }
 
-    fun novoJogo(view: View){
-        this.numeros.text = Megasena().toString()
+    //inserir nome da informação, que ficará no topo
+    fun novaInfo(view: View){
+        this.desc.text = Build().toString()
     }
 
     inner class TrataClickBotao: View.OnClickListener{
         override fun onClick(v:View?){
-            this@MainActivity.numeros.text = Megasena().toString()
+            //inserir conteúdo da classe build
+            this@MainActivity.desc.text = Build().toString()
         }
     }
 }
