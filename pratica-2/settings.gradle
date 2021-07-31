@@ -1,0 +1,2 @@
+rootProject.name = "pdm-pratica-1"
+include ':app'
